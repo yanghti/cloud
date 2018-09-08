@@ -9,7 +9,7 @@ lastmodifieremail = "valere.jeantet@gmail.com"
 tags = ["tag1","tag2"]
 weight = 10
 pre ="<i class='fa fa-edit' ></i> "
-
+hidden = true
 +++
 
 

@@ -4,8 +4,15 @@ description = ""
 weight = 40
 +++
 
-{{%excerpt-include filename="getting-start/configuration.md" /%}}
+## Activate search
 
+If not already present, add the follow lines to the `config.toml` file.
+
+```toml
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+{{%excerpt-include filename="getting-start/configuration.md" /%}}
+```
 
 Docdock theme uses the last improvement available in hugo version 20+ to generate a json index file ready to be consumed by lunr.js javascript search engine.
 
