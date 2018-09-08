@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>operations on Cloud-Notes</title>
+    <link>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/</link>
+    <description>Recent content in operations on Cloud-Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://yanghti.github.io/cloud/cloud-storage/ceph/operations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ceph build</title>
+      <link>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/ceph-build/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/ceph-build/</guid>
+      <description>centos 7 硬盘扩容  查看挂载点
+[ceph-sh-admin@ceph-sh-admin ~]$ df -h Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 17G 17G 20K 100% / devtmpfs 476M 0 476M 0% /dev tmpfs 488M 0 488M 0% /dev/shm tmpfs 488M 51M 437M 11% /run tmpfs 488M 0 488M 0% /sys/fs/cgroup /dev/sda1 1014M 130M 885M 13% /boot tmpfs 98M 0 98M 0% /run/user/1000 tmpfs 98M 0 98M 0% /run/user/0  扩展vmware硬盘空间  硬盘分区和格式化
+[ceph-sh-admin@ceph-sh-admin ~]$ sudo fdisk -l Disk /dev/sda: 128.</description>
+    </item>
+    
+  </channel>
+</rss>
