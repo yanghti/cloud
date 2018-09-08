@@ -21,7 +21,7 @@ weight = 20
     tmpfs                     98M     0   98M   0% /run/user/0
     ```
 2. 扩展vmware硬盘空间
-![expand disk](./expandDisk.jpg)
+![expand disk](/img/cloud-storage/expandDisk.jpg)
 3. 硬盘分区和格式化
 
     ```
