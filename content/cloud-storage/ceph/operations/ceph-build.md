@@ -4,6 +4,8 @@ description = ""
 weight = 20
 +++
 
+[scaleDisk]: ./expandDisk.jpg
+
 ## centos 7 硬盘扩容
 *******
 1. 查看挂载点
@@ -21,7 +23,7 @@ weight = 20
     tmpfs                     98M     0   98M   0% /run/user/0
     ```
 2. 扩展vmware硬盘空间
-![expand disk](/img/cloud-storage/expandDisk.jpg)
+![scaleDisk][]
 3. 硬盘分区和格式化
 
     ```

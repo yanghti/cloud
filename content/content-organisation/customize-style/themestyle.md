@@ -14,7 +14,7 @@ add a param `themeStyle = "STYLE_NAME"` in the `[params]` part of config.toml fi
 themeStyle = "original"
 ```
 
-![green docdock](/variant-gray.png)
+![green docdock](/cloud/variant-gray.png)
 
 ## Style "flex" (work in progress)
 ```
@@ -22,4 +22,4 @@ themeStyle = "original"
 themeStyle = "flex"
 ```
 
-![flex](/style-flex.png)
+![flex](/cloud/style-flex.png)
