@@ -70,10 +70,10 @@ Example from the current website, note the pre param which allows you to insert 
     
     <item>
       <title>scaleDisk</title>
-      <link>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/scaledisk/</link>
+      <link>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/scale-disk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/scaledisk/</guid>
+      <guid>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/scale-disk/</guid>
       <description>centos 7 硬盘扩容 资源  硬盘扩容
 VMware虚拟机中CentOS 7的硬盘空间扩容
 扩大VMware虚拟机中CentOS 7的硬盘空间
