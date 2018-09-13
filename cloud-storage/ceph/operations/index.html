@@ -125,7 +125,14 @@
       <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-build/" class="dd-item">
         <div>
           <a href="/cloud/cloud-storage/ceph/operations/ceph-build/">
-            ceph build
+            ceph-build
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/scaledisk/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/scaledisk/">
+            scaleDisk
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -185,7 +192,8 @@
     <option value="/cloud/cloud-storage/ceph/operations/"  selected>
   -- 
    operations</option> 
-      <option value="/cloud/cloud-storage/ceph/operations/ceph-build/" >--- ceph build</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-build/" >--- ceph-build</option>
+      <option value="/cloud/cloud-storage/ceph/operations/scaledisk/" >--- scaleDisk</option>
   
   
   
@@ -240,12 +248,35 @@
 
    <article class="post cloud-storage">
     <header class="post-header">
-        <h2 class="post-title"><a href="/cloud/cloud-storage/ceph/operations/ceph-build/">ceph build</a></h2>
+        <h2 class="post-title"><a href="/cloud/cloud-storage/ceph/operations/ceph-build/">ceph-build</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>centos 7 硬盘扩容  查看挂载点
-[ceph-sh-admin@ceph-sh-admin ~]$ df -h Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 17G 17G 20K 100% / devtmpfs 476M 0 476M 0% /dev tmpfs 488M 0 488M 0% /dev/shm tmpfs 488M 51M 437M 11% /run tmpfs 488M 0 488M 0% /sys/fs/cgroup /dev/sda1 1014M 130M 885M 13% /boot tmpfs 98M 0 98M 0% /run/user/1000 tmpfs 98M 0 98M 0% /run/user/0  扩展vmware硬盘空间  硬盘分区和格式化
-[ceph-sh-admin@ceph-sh-admin ~]$ sudo fdisk -l Disk /dev/sda: 128. <a class="read-more" href="/cloud/cloud-storage/ceph/operations/ceph-build/">&raquo;</a></p>
+        <p>[ 68%] Built target unittest_shared_cache [ 68%] Built target unittest_sharedptr_registry [ 68%] Built target unittest_shunique_lock [ 68%] Built target unittest_sloppy_crc_map [ 68%] Built target unittest_str_map [ 68%] Built target unittest_tableformatter [ 68%] Built target unittest_throttle [ 68%] Built target unittest_time [ 68%] Built target unittest_url_escape [ 69%] Built target unittest_util [ 69%] Built target unittest_weighted_priority_queue [ 69%] Built target unittest_xmlformatter [ 69%] Built target ceph_example [ 69%] Built target unittest_compression [ 69%] Built target unittest_crush [ 69%] Built target unittest_crush_wrapper [ 69%] Built target unittest_direct_messenger [ 69%] Built target ceph_erasure_code [ 69%] Built target ceph_erasure_code_benchmark [ 69%] Built target ceph_erasure_code_non_regression [ 69%] Built target ec_example [ 69%] Built target ec_fail_to_initialize [ 69%] Built target ec_fail_to_register [ 69%] Built target ec_hangs [ 69%] Built target ec_missing_entry_point [ 69%] Built target ec_missing_version [ 69%] Built target unittest_erasure_code [ 69%] Built target unittest_erasure_code_example [ 69%] Built target unittest_erasure_code_isa [ 69%] Built target unittest_erasure_code_jerasure [ 69%] Built target unittest_erasure_code_lrc [ 69%] Built target unittest_erasure_code_plugin [ 69%] Built target unittest_erasure_code_plugin_isa [ 69%] Built target unittest_erasure_code_plugin_jerasure [ 69%] Built target unittest_erasure_code_plugin_lrc [ 70%] Built target unittest_erasure_code_plugin_shec [ 70%] Built target unittest_erasure_code_shec [ 70%] Built target unittest_erasure_code_shec_all [ 70%] Built target unittest_erasure_code_shec_arguments [ 70%] Built target unittest_erasure_code_shec_thread [ 70%] Built target ceph_test_filestore [ 70%] Built target ceph_test_trim_caps [ 70%] Built target unittest_mds_types [ 70%] Built target journal_test_mock [ 71%] Built target rados_test_stub [ 72%] Built target unittest_journal [ 73%] Built target ceph_test_libcephfs [ 73%] Built target ceph_test_libcephfs_access [ 73%] Built target ceph_test_rados_api_aio [ 73%] Built target ceph_test_rados_api_c_read_operations [ 73%] Built target ceph_test_rados_api_c_write_operations [ 73%] Built target ceph_test_rados_api_cls [ 73%] Built target ceph_test_rados_api_cmd [ 73%] Built target ceph_test_rados_api_io [ 73%] Built target ceph_test_rados_api_list [ 73%] Built target ceph_test_rados_api_lock [ 73%] Built target ceph_test_rados_api_misc [ 73%] Built target ceph_test_rados_api_pool [ 74%] Built target ceph_test_rados_api_service [ 74%] Built target ceph_test_rados_api_snapshots [ 74%] Built target ceph_test_rados_api_stat [ 74%] Built target ceph_test_rados_api_tier [ 74%] Built target ceph_test_rados_api_watch_notify [ 74%] Built target unittest_librados [ 74%] Built target unittest_librados_config [ 74%] Built target rados_striper_test [ 74%] Built target ceph_test_rados_striper_api_aio [ 74%] Built target ceph_test_rados_striper_api_io [ 74%] Built target ceph_test_rados_striper_api_striping [ 74%] Built target rbd_test [ 74%] Built target rbd_api [ 74%] Built target ceph_test_librbd [ 74%] Built target ceph_test_librbd_api [ 74%] Built target ceph_test_librbd_fsx [ 75%] Built target rbd_test_mock [ 78%] Built target unittest_librbd [ 78%] Built target simple_client [ 78%] Built target simple_server [ 78%] Built target unittest_mds_authcap [ 78%] Built target unittest_mds_sessionfilter [ 78%] Built target ceph_test_mon_msg [ 78%] Built target ceph_test_mon_workloadgen [ 78%] Built target unittest_mon_moncap [ 78%] Built target unittest_mon_montypes [ 78%] Built target unittest_mon_pgmap [ 78%] Built target ceph_perf_msgr_client [ 78%] Built target ceph_perf_msgr_server [ 78%] Built target ceph_test_async_driver [ 78%] Built target ceph_test_async_networkstack [ 78%] Built target ceph_test_msgr [ 78%] Built target ceph_test_keyvaluedb_atomicity [ 78%] Built target ceph_test_keyvaluedb_iterators [ 78%] Built target ceph_test_object_map [ 78%] Built target ceph_perf_objectstore [ 78%] Built target ceph_test_filestore_idempotent [ 79%] Built target ceph_test_filestore_idempotent_sequence [ 79%] Built target ceph_test_keyvaluedb [ 79%] Built target store_test_fixture [ 79%] Built target ceph_test_objectstore [ 79%] Built target ceph_test_objectstore_workloadgen [ 79%] Built target unittest_alloc [ 80%] Built target unittest_bit_alloc [ 80%] Built target unittest_bluefs [ 80%] Built target unittest_bluestore_types [ 80%] Built target unittest_chain_xattr [ 80%] Built target unittest_memstore_clone [ 80%] Built target unittest_rocksdb_option [ 80%] Built target unittest_transaction [ 80%] Built target unittest_lfnindex [ 81%] Built target ceph_test_rados [ 81%] Built target unittest_ec_transaction [ 81%] Built target unittest_ecbackend [ 81%] Built target unittest_extent_cache [ 81%] Built target unittest_hitset [ 81%] Built target unittest_mclock_client_queue [ 81%] Built target unittest_mclock_op_class_queue [ 81%] Built target unittest_osd_osdcap [ 81%] Built target unittest_osd_types [ 81%] Built target unittest_osdmap [ 81%] Built target unittest_osdscrub [ 81%] Built target unittest_pg_transaction [ 81%] Built target unittest_pglog [ 81%] Built target ceph_test_objectcacher_stress [ 82%] Built target test_rgw_a [ 82%] Built target ceph_test_rgw_manifest [ 82%] Built target ceph_test_rgw_obj [ 83%] Built target unittest_http_manager [ 83%] Built target unittest_rgw_bencode [ 83%] Built target unittest_rgw_compression [ 83%] Built target unittest_rgw_crypto [ 83%] Built target unittest_rgw_iam_policy [ 83%] Built target unittest_rgw_period_history [ 83%] Built target unittest_rgw_string [ 84%] Built target rbd_mirror_test [ 86%] Built target rbd_mirror_internal [ 86%] Built target ceph_test_rbd_mirror [ 86%] Built target ceph_test_rbd_mirror_random_write [ 87%] Built target unittest_rbd_mirror [ 88%] Built target systest [ 88%] Built target ceph_test_rados_delete_pools_parallel [ 88%] Built target ceph_test_rados_list_parallel [ 88%] Built target ceph_test_rados_open_pools_parallel [ 89%] Built target ceph_test_rados_watch_notify [ 89%] Built target ceph-authtool [ 89%] Built target ceph-client-debug [ 89%] Built target ceph-conf [ 89%] Built target ceph-kvstore-tool [ 89%] Built target ceph-monstore-tool [ 90%] Built target ceph-objectstore-tool [ 90%] Built target ceph-osdomap-tool [ 90%] Built target ceph_psim [ 90%] Built target ceph_radosacl [ 90%] Built target ceph_scratchtool [ 90%] Built target ceph_scratchtoolpp [ 91%] Built target crushtool [ 92%] Built target monmaptool [ 92%] Built target osdmaptool [ 92%] Built target cephfs-data-scan [ 93%] Built target cephfs-journal-tool [ 93%] Built target cephfs-table-tool [ 96%] Built target rbd [ 96%] Built target rbd-mirror [ 96%] Built target rbd-nbd [ 97%] Built target isal_crypto_plugin_objs [ 97%] Built target rbd-fuse [ 97%] Built target rbd-replay [ 97%] Built target rbd-replay-prep [ 98%] Built target cls_kvs [ 98%] Built target ceph_rgw_jsonparser [ 98%] Built target ceph_rgw_multiparser [ 98%] Built target radosgw_a [ 98%] Built target radosgw [ 98%] Built target radosgw-admin [ 98%] Built target radosgw-es [ 98%] Built target radosgw-object-expirer [100%] Built target radosgw-token [100%] manpages building [100%] Built target manpages Install the project&hellip; &ndash; Install configuration: &ldquo;RelWithDebInfo&rdquo; &ndash; Installing: /usr/local/lib64/ceph/libceph-common. <a class="read-more" href="/cloud/cloud-storage/ceph/operations/ceph-build/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post cloud-storage">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/cloud/cloud-storage/ceph/operations/scaledisk/">scaleDisk</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>centos 7 硬盘扩容 资源  硬盘扩容
+VMware虚拟机中CentOS 7的硬盘空间扩容
+扩大VMware虚拟机中CentOS 7的硬盘空间
+给VMware下的Linux扩展磁盘空间(以CentOS7)
+虚拟机下扩容磁盘(centos7) 文件系统管理
+CentOS 7磁盘分区及文件系统管理 lvm管理
+centos下LVM配置与管理
+linux CentOS 7 中LVM讲解配置实例及磁盘扩容等  步骤  查看挂载点
+[ceph-sh-admin@ceph-sh-admin ~]$ df -h Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 17G 17G 20K 100% / devtmpfs 476M 0 476M 0% /dev tmpfs 488M 0 488M 0% /dev/shm tmpfs 488M 51M 437M 11% /run tmpfs 488M 0 488M 0% /sys/fs/cgroup /dev/sda1 1014M 130M 885M 13% /boot tmpfs 98M 0 98M 0% /run/user/1000 tmpfs 98M 0 98M 0% /run/user/0  扩展vmware硬盘空间  硬盘分区和格式化 <a class="read-more" href="/cloud/cloud-storage/ceph/operations/scaledisk/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -274,7 +305,7 @@
         <div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/cloud/cloud-storage/ceph/" title="ceph"> <i class="fa fa-chevron-left"></i><label>ceph</label></a>
-    <a class="nav nav-next" href="/cloud/cloud-storage/ceph/operations/ceph-build/" title="ceph build" style="margin-right: 0px;"><label>ceph build</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/cloud/cloud-storage/ceph/operations/ceph-build/" title="ceph-build" style="margin-right: 0px;"><label>ceph-build</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

@@ -16,6 +16,10 @@
   </url>
   
   <url>
+    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/ceph-build/</loc>
+  </url>
+  
+  <url>
     <loc>https://yanghti.github.io/cloud/content-organisation/extramenu/</loc>
     <lastmod>2017-04-29T18:36:24+02:00</lastmod>
   </url>
@@ -55,11 +59,11 @@
   </url>
   
   <url>
-    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/ceph-build/</loc>
+    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/</loc>
   </url>
   
   <url>
-    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/</loc>
+    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/scaledisk/</loc>
   </url>
   
   <url>
