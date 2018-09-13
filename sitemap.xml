@@ -33,23 +33,11 @@
   </url>
   
   <url>
-    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/scale-disk/</loc>
-  </url>
-  
-  <url>
-    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/scale-disk/</loc>
-  </url>
-  
-  <url>
     <loc>https://yanghti.github.io/cloud/content-organisation/customize-style/</loc>
   </url>
   
   <url>
     <loc>https://yanghti.github.io/cloud/cloud-storage/</loc>
-  </url>
-  
-  <url>
-    <loc>https://yanghti.github.io/cloud/content-organisation/scale-disk/</loc>
   </url>
   
   <url>
@@ -68,6 +56,10 @@
   <url>
     <loc>https://yanghti.github.io/cloud/content-organisation/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/disk-scale/</loc>
   </url>
   
   <url>
