@@ -1,7 +1,7 @@
 +++
-title = "scaleDisk"
+title = "disk-scale"
 description = ""
-weight = 2
+weight = 20
 +++
 
 [scaleDiskImg]: ./scaleoutDisk.jpg
@@ -13,9 +13,9 @@ weight = 2
 [lvm1]: https://www.cnblogs.com/Mr-Ding/p/9198057.html
 [lvm2]: http://blog.51cto.com/fengyunshan911/1958236
 
-## centos 7 硬盘扩容
-*******
-### 资源
+# centos 7 硬盘扩容
+**********
+## 资源
 1. 硬盘扩容  
 [VMware虚拟机中CentOS 7的硬盘空间扩容][scaleDisk1]  
 [扩大VMware虚拟机中CentOS 7的硬盘空间][scaleDisk2]  
@@ -27,7 +27,17 @@ weight = 2
 [centos下LVM配置与管理][lvm1]  
 [linux CentOS 7 中LVM讲解配置实例及磁盘扩容等][lvm2]
 
-### 步骤
+## 步骤
+0. overview
+
+    ```
+    1. 查看挂载点
+    2. 扩展vmware硬盘空间
+    3. 硬盘分区和格式化
+    4. 添加LVM到已有LVM组，实现扩容
+    5. xfs扩容
+    6. 再次查看硬盘空间
+    ```
 1. 查看挂载点
 
     ```
