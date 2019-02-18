@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cloud-Notes</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.48" />
+<title>ceph-osd :: Cloud-Notes</title>
+<link rel="shortcut icon" href="/cloud/images/favicon.png" type="image/x-icon" />
+<link href="/cloud/css/font-awesome.min.css" rel="stylesheet">
+<link href="/cloud/css/nucleus.css" rel="stylesheet">
+<link href="/cloud/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/cloud/css/bootstrap.min.css">
+<script src="/cloud/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "https:\/\/yanghti.github.io\/cloud";
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79101-13', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    
+  </head>
+  <body data-url="/cloud/cloud-storage/ceph/operations/ceph-osd/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://yanghti.github.io/cloud">Cloud-Notes</a>
+  
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/vjeantet/hugo-theme-docdock"  rel="noopener">
+                  <i class='fa fa-github'></i> <label>Github repo</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip"  rel="noopener">
+                  <i class='fa fa-cloud-download'></i> <label>Download</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://gohugo.io/"  rel="noopener">
+                  <i class='fa fa-bookmark'></i> <label>Hugo Documentation</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/cloud/credits"  rel="noopener">
+                  <i class='fa fa-bullhorn'></i> <label>Credits</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/cloud/" class="dd-item">
+          <a href="/cloud/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/cloud/getting-start/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cloud/getting-start/">Getting started</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cloud/getting-start/installation/" class="dd-item">
+        <div>
+          <a href="/cloud/getting-start/installation/">
+            Installation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/getting-start/configuration/" class="dd-item">
+        <div>
+          <a href="/cloud/getting-start/configuration/">
+            Configuration
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cloud/cloud-computing/" class="dd-item
+        ">
+      <div>
+      <a href="/cloud/cloud-computing/">cloud computing</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cloud/cloud-storage/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/cloud/cloud-storage/">cloud storage</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cloud/cloud-storage/ceph/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/cloud/cloud-storage/ceph/">ceph</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/cloud/cloud-storage/ceph/operations/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/cloud/cloud-storage/ceph/operations/">operations</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-build/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-build/">
+            ceph-build
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-osd/" class="dd-item active">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-osd/">
+            ceph-osd
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-deploy/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-deploy/">
+            ceph-deploy
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-mgr-dashboard/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-mgr-dashboard/">
+            ceph-mgr-dashboard
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-bench/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-bench/">
+            ceph-bench
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/disk-scale/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/disk-scale/">
+            disk-scale
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cloud/cloud-scheduling/" class="dd-item
+        ">
+      <div>
+      <a href="/cloud/cloud-scheduling/">cloud scheduling</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/cloud/search/" class="dd-item
+        ">
+      <div>
+      <a href="/cloud/search/">About the Search Engine</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+
+    </ul>
+    <section><center>
+
+<a class="github-button" href="https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download vjeantet/hugo-theme-docdock on GitHub">Download</a>
+
+
+<a class="github-button" href="https://github.com/vjeantet/hugo-theme-docdock" data-icon="octicon-star" data-show-count="false" aria-label="Star vjeantet/hugo-theme-docdock on GitHub">Star</a>
+
+
+<a class="github-button" href="https://github.com/vjeantet/hugo-theme-docdock/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork vjeantet/hugo-theme-docdock on GitHub">Fork</a>
+
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/cloud/getting-start/" >
+   Getting started</option>
+    <option value="/cloud/cloud-computing/" >
+   cloud computing</option>
+    <option value="/cloud/cloud-storage/" >
+   cloud storage</option> 
+    <option value="/cloud/cloud-storage/ceph/" >
+  - 
+   ceph</option> 
+    <option value="/cloud/cloud-storage/ceph/operations/" >
+  -- 
+   operations</option> 
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-build/" >--- ceph-build</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-osd/"  selected>--- ceph-osd</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-deploy/" >--- ceph-deploy</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-mgr-dashboard/" >--- ceph-mgr-dashboard</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-bench/" >--- ceph-bench</option>
+      <option value="/cloud/cloud-storage/ceph/operations/disk-scale/" >--- disk-scale</option>
+  
+  
+  
+    <option value="/cloud/cloud-scheduling/" >
+   cloud scheduling</option>
+    <option value="/cloud/create-page/" >
+   Create Page</option>
+    <option value="/cloud/content-organisation/" >
+   Content Organisation</option>
+    <option value="/cloud/shortcodes/" >
+   Shortcodes</option>
+    <option value="/cloud/search/" >
+   About the Search Engine</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/cloud/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/cloud/js/auto-complete.js"></script>
+        <link href="/cloud/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "https:\/\/yanghti.github.io\/cloud";
+          
+        </script>
+        <script type="text/javascript" src="/cloud/js/search.js"></script>
+      </div>
+    
+
+    <h1>ceph-osd</h1>
+    
+    
+    
+    
+
+<h1 id="ceph-osd-部署">ceph osd 部署</h1>
+
+<hr />
+
+<h2 id="资源">资源</h2>
+
+<hr />
+
+<ol>
+<li>ceph osd 部署<br />
+<a href="http://docs.ceph.com/docs/master/rados/configuration/bluestore-config-ref/">http://docs.ceph.com/docs/master/rados/configuration/bluestore-config-ref/</a><br />
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ceph_storage/3/html/administration_guide/osd-bluestore">redhat administration guide CHAPTER 9. OSD BLUESTORE (TECHNOLOGY PREVIEW)</a><br />
+<a href="http://blog.51cto.com/99cloud/2119884">开源实践分享：Ceph bluestore部署实践</a><br />
+<a href="https://www.slideshare.net/sageweil1/bluestore-a-new-storage-backend-for-ceph-one-year-in">BlueStore: A New Storage Backend for Ceph</a><br />
+<a href="http://lists.ceph.com/pipermail/ceph-users-ceph.com/2017-September/020951.html">[ceph-users] Bluestore OSD_DATA, WAL &amp; DB</a><br />
+<a href="http://lists.ceph.com/pipermail/ceph-users-ceph.com/2017-September/020974.html">[ceph-users] Bluestore OSD_DATA, WAL &amp; DB</a><br />
+<a href="http://lists.ceph.com/pipermail/ceph-users-ceph.com/2017-September/021037.html">[ceph-users] Bluestore OSD_DATA, WAL &amp; DB</a><br />
+<a href="http://lists.ceph.com/pipermail/ceph-users-ceph.com/2017-September/021038.html">[ceph-users] Bluestore OSD_DATA, WAL &amp; DB</a><br />
+<a href="https://forum.proxmox.com/threads/ceph-how-to-specifiy-db-device-for-bluestore-osd.44643/">Ceph: How to specifiy DB device for Bluestore OSD</a><br />
+<a href="https://pve.proxmox.com/pve-docs/chapter-pveceph.html">Manage Ceph Services on Proxmox VE Nodes</a><br />
+<a href="http://lists.ceph.com/pipermail/ceph-users-ceph.com/2017-September/020719.html">[ceph-users] Bluestore &ldquo;separate&rdquo; WAL and DB (and WAL/DB size?)</a><br />
+<a href="https://ceph.com/community/new-luminous-bluestore/">https://ceph.com/community/new-luminous-bluestore/</a><br />
+<a href="https://ceph.com/planet/understanding-bluestore-cephs-new-storage-backend/">https://ceph.com/planet/understanding-bluestore-cephs-new-storage-backend/</a><br />
+<a href="http://ourobengr.com/2017/09/understanding-bluestore/">http://ourobengr.com/2017/09/understanding-bluestore/</a><br />
+<a href="https://github.com/MartinEmrich/kb/blob/master/ceph/Manual-Bluestore.md">https://github.com/MartinEmrich/kb/blob/master/ceph/Manual-Bluestore.md</a><br />
+<a href="https://www.jianshu.com/p/396bf436275a">Ceph 部署（Centos7 + Luminous）</a><br />
+<a href="http://www.jaywaychou.com/">深入浅出BlueStore的OSD创建与启动</a><br />
+<a href="https://cloud.tencent.com/developer/article/1171492">Luminous下删除和新建OSD的正确姿势</a><br />
+<a href="http://xcodest.me/ceph-bluestore-and-ceph-volume.html">Ceph bluestore 和 ceph-volume</a><br />
+<a href="http://www.tang-lei.com/2018/06/15/ceph-luminous-%E7%89%88%E6%9C%AC%E9%83%A8%E7%BD%B2-bluestore/">ceph-luminous-版本部署-bluestore</a><br />
+<a href="http://blog.wjin.org/posts/ceph-bluestore-bluefs.html">Ceph BlueStore BlueFS</a><br /></li>
+<li>ceph-volume<br />
+<a href="http://docs.ceph.com/docs/master/ceph-volume/lvm/prepare/#">http://docs.ceph.com/docs/master/ceph-volume/lvm/prepare/#</a><br />
+<a href="http://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/#">http://docs.ceph.com/docs/master/rados/operations/add-or-rm-osds/#</a><br />
+<a href="https://www.suse.com/support/kb/doc/?id=7023110">Using multipath devices for OSDs</a><br />
+<a href="https://tracker.ceph.com/issues/23337">tracker.ceph.com ceph-volume lvm create fails to detect multipath devices</a><br />
+<a href="https://github.com/ceph/ceph/pull/20878">github ceph-volume document multipath support #20878</a><br />
+<a href="https://github.com/ceph/ceph/pull/20296">github Allow multipath volumes in ceph-volume. #20296</a><br />
+<a href="https://tracker.ceph.com/issues/19489">tracker.ceph.com ceph-disk: failing to activate osd with multipath</a><br /></li>
+<li>device mapper multipath<br />
+<a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/dm_multipath/">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/dm_multipath/</a><br />
+<a href="http://blog.51cto.com/lookingdream/1793606">Multipath多路径冗余全解析</a><br />
+<a href="http://blog.51cto.com/xiaocao13140/2091893">Oracle数据库中Linux下多路径使用及大容量硬盘挂载</a><br />
+<a href="https://access.redhat.com/discussions/2423461">redhat pvcreate fails while using multipath device</a><br />
+<a href="https://access.redhat.com/solutions/227073">redhat Paths to multipath device does not show the newly created partition</a><br /></li>
+</ol>
+
+<h2 id="步骤">步骤</h2>
+
+<hr />
+
+<ol>
+<li><p>overview</p>
+
+<p>```</p>
+
+<ol>
+<li>add osd
+```</li>
+</ol></li>
+
+<li><p>add osd</p>
+
+<pre><code>sudo pvcreate /dev/mapper/mpatha
+sudo vgcreate ceph-block-a /dev/mapper/mpatha
+sudo lvcreate -l 100%FREE -n block-a ceph-block-a
+ceph-deploy osd create --data ceph-block-a/block-a server06
+</code></pre>
+
+<pre><code>[store@server06 ceph-deploy]$ ceph-deploy osd create --data ceph-block-a/block-a server06
+[ceph_deploy.conf][DEBUG ] found configuration file at: /home/store/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy osd create --data ceph-block-a/block-a server06
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  bluestore                     : None
+[ceph_deploy.cli][INFO  ]  cd_conf                       : &lt;ceph_deploy.conf.cephdeploy.Conf instance at 0x7fc0a3cf1950&gt;
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  fs_type                       : xfs
+[ceph_deploy.cli][INFO  ]  block_wal                     : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  journal                       : None
+[ceph_deploy.cli][INFO  ]  subcommand                    : create
+[ceph_deploy.cli][INFO  ]  host                          : server06
+[ceph_deploy.cli][INFO  ]  filestore                     : None
+[ceph_deploy.cli][INFO  ]  func                          : &lt;function osd at 0x7fc0a3f36c80&gt;
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  zap_disk                      : False
+[ceph_deploy.cli][INFO  ]  data                          : ceph-block-a/block-a
+[ceph_deploy.cli][INFO  ]  block_db                      : None
+[ceph_deploy.cli][INFO  ]  dmcrypt                       : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[ceph_deploy.cli][INFO  ]  dmcrypt_key_dir               : /etc/ceph/dmcrypt-keys
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  debug                         : False
+[ceph_deploy.osd][DEBUG ] Creating OSD on cluster ceph with data device ceph-block-a/block-a
+[server06][DEBUG ] connection detected need for sudo
+[server06][DEBUG ] connected to host: server06 
+[server06][DEBUG ] detect platform information from remote host
+[server06][DEBUG ] detect machine type
+[server06][DEBUG ] find the location of an executable
+[ceph_deploy.osd][INFO  ] Distro info: CentOS Linux 7.5.1804 Core
+[ceph_deploy.osd][DEBUG ] Deploying osd to server06
+[server06][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[server06][DEBUG ] find the location of an executable
+[server06][INFO  ] Running command: sudo /usr/sbin/ceph-volume --cluster ceph lvm create --bluestore --data ceph-block-a/block-a
+[server06][DEBUG ] Running command: /bin/ceph-authtool --gen-print-key
+[server06][DEBUG ] Running command: /bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring -i - osd new 6a3db9e1-82cf-46da-bb3d-b834dfc5ef9e
+[server06][DEBUG ] Running command: /bin/ceph-authtool --gen-print-key
+[server06][DEBUG ] Running command: /bin/mount -t tmpfs tmpfs /var/lib/ceph/osd/ceph-0
+[server06][DEBUG ] Running command: /usr/sbin/restorecon /var/lib/ceph/osd/ceph-0
+[server06][DEBUG ] Running command: /bin/chown -h ceph:ceph /dev/ceph-block-a/block-a
+[server06][DEBUG ] Running command: /bin/chown -R ceph:ceph /dev/dm-4
+[server06][DEBUG ] Running command: /bin/ln -s /dev/ceph-block-a/block-a /var/lib/ceph/osd/ceph-0/block
+[server06][DEBUG ] Running command: /bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring mon getmap -o /var/lib/ceph/osd/ceph-0/activate.monmap
+[server06][DEBUG ]  stderr: got monmap epoch 3
+[server06][DEBUG ] Running command: /bin/ceph-authtool /var/lib/ceph/osd/ceph-0/keyring --create-keyring --name osd.0 --add-key AQDpFSVcy+qQCxAAXP/MY1ac8Pq1V7dNMElzNA==
+[server06][DEBUG ]  stdout: creating /var/lib/ceph/osd/ceph-0/keyring
+[server06][DEBUG ]  stdout: added entity osd.0 auth auth(auid = 18446744073709551615 key=AQDpFSVcy+qQCxAAXP/MY1ac8Pq1V7dNMElzNA== with 0 caps)
+[server06][DEBUG ] Running command: /bin/chown -R ceph:ceph /var/lib/ceph/osd/ceph-0/keyring
+[server06][DEBUG ] Running command: /bin/chown -R ceph:ceph /var/lib/ceph/osd/ceph-0/
+[server06][DEBUG ] Running command: /bin/ceph-osd --cluster ceph --osd-objectstore bluestore --mkfs -i 0 --monmap /var/lib/ceph/osd/ceph-0/activate.monmap --keyfile - --osd-data /var/lib/ceph/osd/ceph-0/ --osd-uuid 6a3db9e1-82cf-46da-bb3d-b834dfc5ef9e --setuser ceph --setgroup ceph
+[server06][DEBUG ] --&gt; ceph-volume lvm prepare successful for: ceph-block-a/block-a
+[server06][DEBUG ] Running command: /bin/ceph-bluestore-tool --cluster=ceph prime-osd-dir --dev /dev/ceph-block-a/block-a --path /var/lib/ceph/osd/ceph-0 --no-mon-config
+[server06][DEBUG ] Running command: /bin/ln -snf /dev/ceph-block-a/block-a /var/lib/ceph/osd/ceph-0/block
+[server06][DEBUG ] Running command: /bin/chown -h ceph:ceph /var/lib/ceph/osd/ceph-0/block
+[server06][DEBUG ] Running command: /bin/chown -R ceph:ceph /dev/dm-4
+[server06][DEBUG ] Running command: /bin/chown -R ceph:ceph /var/lib/ceph/osd/ceph-0
+[server06][DEBUG ] Running command: /bin/systemctl enable ceph-volume@lvm-0-6a3db9e1-82cf-46da-bb3d-b834dfc5ef9e
+[server06][DEBUG ]  stderr: Created symlink from /etc/systemd/system/multi-user.target.wants/ceph-volume@lvm-0-6a3db9e1-82cf-46da-bb3d-b834dfc5ef9e.service to /usr/lib/systemd/system/ceph-volume@.service.
+[server06][DEBUG ] Running command: /bin/systemctl enable --runtime ceph-osd@0
+[server06][DEBUG ]  stderr: Created symlink from /run/systemd/system/ceph-osd.target.wants/ceph-osd@0.service to /usr/lib/systemd/system/ceph-osd@.service.
+[server06][DEBUG ] Running command: /bin/systemctl start ceph-osd@0
+[server06][DEBUG ] --&gt; ceph-volume lvm activate successful for osd ID: 0
+[server06][DEBUG ] --&gt; ceph-volume lvm create successful for: ceph-block-a/block-a
+[server06][INFO  ] checking OSD status...
+[server06][DEBUG ] find the location of an executable
+[server06][INFO  ] Running command: sudo /bin/ceph --cluster=ceph osd stat --format=json
+[ceph_deploy.osd][DEBUG ] Host server06 is now ready for osd use.
+</code></pre>
+
+<pre><code>[store@server06 ceph-deploy]$ ceph-deploy osd create --data /dev/mapper/mpatha server06
+[ceph_deploy.conf][DEBUG ] found configuration file at: /home/store/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy osd create --data /dev/mapper/mpatha server06
+[ceph_deploy.cli][INFO  ] ceph-deploy options:
+[ceph_deploy.cli][INFO  ]  verbose                       : False
+[ceph_deploy.cli][INFO  ]  bluestore                     : None
+[ceph_deploy.cli][INFO  ]  cd_conf                       : &lt;ceph_deploy.conf.cephdeploy.Conf instance at 0x7fef0c5aa950&gt;
+[ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[ceph_deploy.cli][INFO  ]  fs_type                       : xfs
+[ceph_deploy.cli][INFO  ]  block_wal                     : None
+[ceph_deploy.cli][INFO  ]  default_release               : False
+[ceph_deploy.cli][INFO  ]  username                      : None
+[ceph_deploy.cli][INFO  ]  journal                       : None
+[ceph_deploy.cli][INFO  ]  subcommand                    : create
+[ceph_deploy.cli][INFO  ]  host                          : server06
+[ceph_deploy.cli][INFO  ]  filestore                     : None
+[ceph_deploy.cli][INFO  ]  func                          : &lt;function osd at 0x7fef0c7efc80&gt;
+[ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[ceph_deploy.cli][INFO  ]  zap_disk                      : False
+[ceph_deploy.cli][INFO  ]  data                          : /dev/mapper/mpatha
+[ceph_deploy.cli][INFO  ]  block_db                      : None
+[ceph_deploy.cli][INFO  ]  dmcrypt                       : False
+[ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[ceph_deploy.cli][INFO  ]  dmcrypt_key_dir               : /etc/ceph/dmcrypt-keys
+[ceph_deploy.cli][INFO  ]  quiet                         : False
+[ceph_deploy.cli][INFO  ]  debug                         : False
+[ceph_deploy.osd][DEBUG ] Creating OSD on cluster ceph with data device /dev/mapper/mpatha
+[server06][DEBUG ] connection detected need for sudo
+[server06][DEBUG ] connected to host: server06 
+[server06][DEBUG ] detect platform information from remote host
+[server06][DEBUG ] detect machine type
+[server06][DEBUG ] find the location of an executable
+[ceph_deploy.osd][INFO  ] Distro info: CentOS Linux 7.5.1804 Core
+[ceph_deploy.osd][DEBUG ] Deploying osd to server06
+[server06][DEBUG ] write cluster configuration to /etc/ceph/{cluster}.conf
+[server06][WARNIN] osd keyring does not exist yet, creating one
+[server06][DEBUG ] create a keyring file
+[server06][DEBUG ] find the location of an executable
+[server06][INFO  ] Running command: sudo /usr/sbin/ceph-volume --cluster ceph lvm create --bluestore --data /dev/mapper/mpatha
+[server06][WARNIN] --&gt;  RuntimeError: Cannot use device (/dev/mapper/mpatha). A vg/lv path or an existing device is needed
+[server06][DEBUG ] Running command: /bin/ceph-authtool --gen-print-key
+[server06][DEBUG ] Running command: /bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring -i - osd new c393d04b-2f1b-4b17-a8de-f4b8b14b9a9d
+[server06][DEBUG ] --&gt; Was unable to complete a new OSD, will rollback changes
+[server06][DEBUG ] Running command: /bin/ceph --cluster ceph --name client.bootstrap-osd --keyring /var/lib/ceph/bootstrap-osd/ceph.keyring osd purge-new osd.0 --yes-i-really-mean-it
+[server06][DEBUG ]  stderr: purged osd.0
+[server06][ERROR ] RuntimeError: command returned non-zero exit status: 1
+[ceph_deploy.osd][ERROR ] Failed to execute command: /usr/sbin/ceph-volume --cluster ceph lvm create --bluestore --data /dev/mapper/mpatha
+[ceph_deploy][ERROR ] GenericError: Failed to create 1 OSDs
+</code></pre></li>
+</ol>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/cloud/cloud-storage/ceph/operations/ceph-build/" title="ceph-build"> <i class="fa fa-chevron-left"></i><label>ceph-build</label></a>
+    <a class="nav nav-next" href="/cloud/cloud-storage/ceph/operations/ceph-deploy/" title="ceph-deploy" style="margin-right: 0px;"><label>ceph-deploy</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+  
+
+    <div class="github-link">
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/cloud-storage/ceph/operations/ceph-osd.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/cloud/js/clipboard.min.js"></script>
+
+<link href="/cloud/css/featherlight.min.css" rel="stylesheet">
+<script src="/cloud/js/featherlight.min.js"></script>
+
+
+
+<script src="/cloud/theme-flex/script.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

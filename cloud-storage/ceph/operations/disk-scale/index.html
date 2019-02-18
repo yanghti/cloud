@@ -129,6 +129,34 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-osd/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-osd/">
+            ceph-osd
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-deploy/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-deploy/">
+            ceph-deploy
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-mgr-dashboard/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-mgr-dashboard/">
+            ceph-mgr-dashboard
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cloud/cloud-storage/ceph/operations/ceph-bench/" class="dd-item">
+        <div>
+          <a href="/cloud/cloud-storage/ceph/operations/ceph-bench/">
+            ceph-bench
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/cloud/cloud-storage/ceph/operations/disk-scale/" class="dd-item active">
         <div>
           <a href="/cloud/cloud-storage/ceph/operations/disk-scale/">
@@ -193,6 +221,10 @@
   -- 
    operations</option> 
       <option value="/cloud/cloud-storage/ceph/operations/ceph-build/" >--- ceph-build</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-osd/" >--- ceph-osd</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-deploy/" >--- ceph-deploy</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-mgr-dashboard/" >--- ceph-mgr-dashboard</option>
+      <option value="/cloud/cloud-storage/ceph/operations/ceph-bench/" >--- ceph-bench</option>
       <option value="/cloud/cloud-storage/ceph/operations/disk-scale/"  selected>--- disk-scale</option>
   
   
@@ -235,11 +267,11 @@
     
     
 
-<h2 id="centos-7-硬盘扩容">centos 7 硬盘扩容</h2>
+<h1 id="centos-7-硬盘扩容">centos 7 硬盘扩容</h1>
 
 <hr />
 
-<h3 id="资源">资源</h3>
+<h2 id="资源">资源</h2>
 
 <ol>
 <li>硬盘扩容<br />
@@ -254,9 +286,23 @@
 <a href="http://blog.51cto.com/fengyunshan911/1958236">linux CentOS 7 中LVM讲解配置实例及磁盘扩容等</a></li>
 </ol>
 
-<h3 id="步骤">步骤</h3>
+<h2 id="步骤">步骤</h2>
 
 <ol>
+<li><p>overview</p>
+
+<p>```</p>
+
+<ol>
+<li>查看挂载点</li>
+<li>扩展vmware硬盘空间</li>
+<li>硬盘分区和格式化</li>
+<li>添加LVM到已有LVM组，实现扩容</li>
+<li>xfs扩容</li>
+<li>再次查看硬盘空间
+```</li>
+</ol></li>
+
 <li><p>查看挂载点</p>
 
 <pre><code>[ceph-sh-admin@ceph-sh-admin ~]$ df -h
@@ -736,7 +782,7 @@ tmpfs                   tmpfs     283M     0  283M   0% /run/user/1000
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/cloud/cloud-storage/ceph/operations/ceph-build/" title="ceph-build"> <i class="fa fa-chevron-left"></i><label>ceph-build</label></a>
+<a class="nav nav-prev" href="/cloud/cloud-storage/ceph/operations/ceph-bench/" title="ceph-bench"> <i class="fa fa-chevron-left"></i><label>ceph-bench</label></a>
     <a class="nav nav-next" href="/cloud/cloud-scheduling/" title="cloud scheduling" style="margin-right: 0px;"><label>cloud scheduling</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 

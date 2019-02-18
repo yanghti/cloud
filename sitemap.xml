@@ -29,6 +29,10 @@
   </url>
   
   <url>
+    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/ceph-osd/</loc>
+  </url>
+  
+  <url>
     <loc>https://yanghti.github.io/cloud/cloud-computing/</loc>
   </url>
   
@@ -37,11 +41,23 @@
   </url>
   
   <url>
+    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/ceph-deploy/</loc>
+  </url>
+  
+  <url>
     <loc>https://yanghti.github.io/cloud/cloud-storage/</loc>
   </url>
   
   <url>
+    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/ceph-mgr-dashboard/</loc>
+  </url>
+  
+  <url>
     <loc>https://yanghti.github.io/cloud/cloud-scheduling/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yanghti.github.io/cloud/cloud-storage/ceph/operations/ceph-bench/</loc>
   </url>
   
   <url>
